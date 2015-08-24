@@ -16,5 +16,5 @@ Testing
 git clone git@github.com:WAGGNews/WAGG-Earthquake-Bot
 cd WAGG-Earthquake-Bot
 pip install -r requirements.txt
-python bot.py # For now
+python WAGG-Earthquake-Bot/main.py 
 ```
