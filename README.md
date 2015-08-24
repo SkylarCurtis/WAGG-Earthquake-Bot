@@ -9,6 +9,12 @@ We'll be using [USGS' API](http://earthquake.usgs.gov/fdsnws/event/1/), specific
 http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson
 ```
 
+To Do
+-----
+
+- [ ] Add support to give English class an array of earthquake events
+and have it parse all objects
+
 Testing
 -------
 
@@ -16,5 +22,5 @@ Testing
 git clone git@github.com:WAGGNews/WAGG-Earthquake-Bot
 cd WAGG-Earthquake-Bot
 pip install -r requirements.txt
-python WAGG-Earthquake-Bot/main.py 
+python WAGG-Earthquake-Bot/main.py
 ```

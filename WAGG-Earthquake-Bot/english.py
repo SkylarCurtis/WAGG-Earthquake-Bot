@@ -21,5 +21,5 @@ class English():
         return value.strftime("%H:%M")
 
     def sentence(self):
-        return "Magnitude {} earthquake hits {} at {} UTC "\
+        return "Magnitude {} earthquake hits {} at {} UTC " \
         "- {}".format(self.magnitude(), self.place(), self.time(), self.url())
