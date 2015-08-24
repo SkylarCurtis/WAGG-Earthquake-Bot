@@ -6,6 +6,8 @@ url = 'http://earthquake.usgs.gov/earthquakes/feed' \
 
 r = requests.get(url)
 if r.status_code == 200:
-	print r.json()
+	if len(r.json()['features']) > 0:
+		s = English(r.json())
+		print s.sentence()
 else:
 	print "Error: Status code {}".format(r.status_code)
