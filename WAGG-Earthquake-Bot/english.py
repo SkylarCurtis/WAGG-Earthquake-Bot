@@ -18,7 +18,7 @@ class English():
     def time(self):
         timestamp = self.properties['time']
         value = datetime.datetime.fromtimestamp(timestamp/1000)
-        return value.strftime("%H:%M")
+        return value.strftime("%H:%M on %B %d, %Y")
 
     def sentence(self):
         return "Magnitude {} earthquake hits {} at {} UTC " \
