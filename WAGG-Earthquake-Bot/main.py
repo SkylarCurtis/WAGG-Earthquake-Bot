@@ -6,7 +6,7 @@ url = 'http://earthquake.usgs.gov/earthquakes/feed' \
 
 test_url = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson'
 
-r = requests.get(url)
+r = requests.get(test_url)
 if r.status_code == 200:
 	if len(r.json()['features']) > 0:
 		s = English(r.json())
