@@ -14,6 +14,7 @@ To Do
 
 - [ ] Add support to give English class an array of earthquake events
 and have it parse all objects
+- [ ] Remove methods to return values and instead use `@property` for cleaner syntax
 
 Testing
 -------
