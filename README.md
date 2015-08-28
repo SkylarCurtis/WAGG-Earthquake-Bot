@@ -3,13 +3,13 @@ WAGG-Earthquake-Bot
 
 A Twitter bot that tweets when significant earthquakes occur.
 
-We'll be using [USGS' API](http://earthquake.usgs.gov/fdsnws/event/1/), specifically `significant_hour`, for the latest important earthquake reports:
+We'll be using [USGS's API](http://earthquake.usgs.gov/fdsnws/event/1/), specifically `significant_hour`, for the latest important earthquake reports:
 
 ```
 http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojson
 ```
 
-To Do
+To do
 -----
 
 - [ ] Add support to give English class an array of earthquake events
