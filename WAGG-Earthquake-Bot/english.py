@@ -28,4 +28,4 @@ class English():
             "magnitude":self.magnitude(), "place":self.place(),
             "time":self.time(), "url":self.url() }
         return "Magnitude {magnitude} earthquake hits {place} at {time} UTC " \
-        "- {url}".format(**values)
+        "– @USGS {url}".format(**values)
