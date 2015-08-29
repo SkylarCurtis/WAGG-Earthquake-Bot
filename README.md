@@ -14,7 +14,9 @@ To do
 
 - [x] Basic English parsing
 - [x] Add Twitter
-- [ ] Add Brae's rules
+- [x] Add Brae's rules
+	- [ ] Fix "1 kilometre" bug
+- [ ] Make time relative ("Earthquake x minutes ago") (Adarn's suggestion)
 - [ ] Add support to give English class an array of earthquake events
 and have it parse all objects
 - [ ] Remove methods to return values and instead use `@property` for cleaner syntax

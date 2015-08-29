@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 """
 Parses input into native, aesthetically pleasing English
 Example of tweet style at twitter.com/WAGGNews/status/633736182782758913
 """
 
-import datetime
+import datetime, re
+
 
 # Braerules
 # Numbers < 10 to be spelled out
@@ -16,12 +18,23 @@ class English():
     def raw(self): return self.input
     def magnitude(self): return self.properties['mag']
     def url(self): return self.properties['url']
-    def place(self): return self.properties['place']
+
+    def replace(self, match):
+        d = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five',
+            '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', 'N': 'North',
+            'E': 'East', 'S': 'South', 'W': 'West'}
+        source = match.group(1).strip()
+        return d.get(source, source) + ' '
+
+    def place(self):
+        p = self.properties['place']
+        p = re.sub(r'(\d+ *km|[NESW]\s+(?=of))', self.replace, p)
+        return p
 
     def time(self):
         timestamp = self.properties['time']
         value = datetime.datetime.fromtimestamp(timestamp/1000)
-        return value.strftime("%H:%M on %B %d, %Y")
+        return value.strftime("%H:%M")
 
     def sentence(self):
         values = {
