@@ -12,6 +12,9 @@ http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_hour.geojso
 To do
 -----
 
+- [x] Basic English parsing
+- [x] Add Twitter
+- [ ] Add Brae's rules
 - [ ] Add support to give English class an array of earthquake events
 and have it parse all objects
 - [ ] Remove methods to return values and instead use `@property` for cleaner syntax
