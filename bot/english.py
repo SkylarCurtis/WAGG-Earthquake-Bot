@@ -18,21 +18,18 @@ class English():
     def magnitude(self): return self.properties['mag']
     def url(self): return self.properties['url']
 
-    def replace(self, match):
-        d = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', 'N': 'North', 'E': 'East', 'S': 'South', 'W': 'West'}
-
-        source = match.group(1).strip()
-
-        if 'km' in source:
-            source = source.split(" ")[0]
-            return "{} kilometre{}".format(d.get(source, source), '' if source == '1' else 's')
-        else:
-            return d.get(source, source) + ' '
-
     def place(self):
-        p = self.properties['place']
-        p = re.sub(r'(\d+ *km|[NESW]\s+(?=of))', self.replace, p)
-        return p
+        def replace(match):
+            d = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', 'N': 'North', 'E': 'East', 'S': 'South', 'W': 'West'}
+            source = match.group(1).strip()
+
+            if 'km' in source:
+                source = source.split("km")[0].strip()
+                return "{} kilometre{}".format(d.get(source, source), '' if source == '1' else 's')
+            else:
+                return d.get(source, source) + ' '
+
+        return re.sub(r'(\d+ *km|[NESW]\s+(?=of))', replace, self.properties['place'])
 
     def time(self):
         timestamp = self.properties['time']
