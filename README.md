@@ -15,7 +15,7 @@ To do
 - [x] Basic English parsing
 - [x] Add Twitter
 - [x] Add Brae's rules
-	- [ ] Fix "1 kilometre" bug
+	- [x] Fix "1 kilometre" bug
 - [ ] Make time relative ("Earthquake x minutes ago") (Adarn's suggestion)
 - [ ] Add support to give English class an array of earthquake events
 and have it parse all objects
