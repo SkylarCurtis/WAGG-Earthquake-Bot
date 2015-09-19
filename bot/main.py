@@ -10,8 +10,8 @@ test_url = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant
 r = requests.get(url)
 if r.status_code == 200:
 	if len(r.json()['features']) > 0:
-		s = English(r.json())
-		t = Twitter()
-		t.tweet(s.sentence())
+		sentence = English(r.json())
+		client = Twitter()
+		client.tweet(sentence)
 else:
 	print "Error: Status code {}".format(r.status_code)

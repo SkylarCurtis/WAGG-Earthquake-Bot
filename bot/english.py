@@ -14,6 +14,14 @@ class English():
         self.input = input
         self.properties = self.input['features'][0]['properties']
 
+    def __str__(self):
+        values = {
+            "magnitude":self.magnitude(), "place":self.place(),
+            "time":self.time(), "url":self.url()}
+        return "Magnitude {magnitude} earthquake hits {place} at {time} UTC " \
+        "– @USGS {url}".format(**values)
+
+
     def raw(self): return self.input
     def magnitude(self): return self.properties['mag']
     def url(self): return self.properties['url']
@@ -35,10 +43,3 @@ class English():
         timestamp = self.properties['time']
         value = datetime.datetime.fromtimestamp(timestamp/1000)
         return value.strftime("%H:%M")
-
-    def sentence(self):
-        values = {
-            "magnitude":self.magnitude(), "place":self.place(),
-            "time":self.time(), "url":self.url()}
-        return "Magnitude {magnitude} earthquake hits {place} at {time} UTC " \
-        "– @USGS {url}".format(**values)
