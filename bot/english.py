@@ -20,7 +20,8 @@ class English():
 
     def place(self):
         def replace(match):
-            d = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', 'N': 'North', 'E': 'East', 'S': 'South', 'W': 'West'}
+            d = {'1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven',
+                '8': 'eight', '9': 'nine', 'N': 'North', 'E': 'East', 'S': 'South', 'W': 'West'}
             source = match.group(1).strip()
 
             if 'km' in source:
